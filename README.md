@@ -1,1 +1,1 @@
-# BPC-OOP
+## Cvičenia z BPC-OOP
