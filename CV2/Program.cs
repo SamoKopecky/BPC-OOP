@@ -25,7 +25,7 @@ namespace CV2
             TestComplex.Name = "Conjugate";
             TestComplex.Test();
 
-            Console.WriteLine(first + " != " + second + ": " + (first == second));
+            Console.WriteLine(first + " != " + second + ": " + (first != second));
             Console.WriteLine(first + " == " + new Complex(3, 2) + ": " + (first == new Complex(3, 2)));
             Console.WriteLine("Modulus: " + first.Modulus());
             Console.WriteLine("Argument: " + first.Argument());
