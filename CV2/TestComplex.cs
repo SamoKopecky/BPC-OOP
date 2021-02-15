@@ -11,7 +11,7 @@ namespace CV2
         public static Complex Actual { get; set; }
         public static string Name { get; set; }
 
-        public static bool Test()
+        public static void Test()
         {
             if (Expected == Actual)
             {
@@ -21,8 +21,6 @@ namespace CV2
             {
                 Console.WriteLine("Error: Expected value: " + Expected + " Actual value " + Actual);
             }
-
-            return false;
         }
     }
 }
