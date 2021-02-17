@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
-using System.Runtime.InteropServices;
 
 namespace CV2
 {
@@ -63,10 +61,10 @@ namespace CV2
         {
             if (Imaginary < 0)
             {
-                return Real + "" + Imaginary + "j";
+                return $"{Real}{Imaginary}j";
             }
 
-            return Real + "+" + Imaginary + "j";
+            return $"{Real}+{Imaginary}j";
         }
     }
 }

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Text;
 
 namespace CV2
 {
@@ -15,11 +12,11 @@ namespace CV2
         {
             if (Expected == Actual)
             {
-                Console.WriteLine(Name + ": OK");
+                Console.WriteLine($"{Name}: OK");
             }
             else
             {
-                Console.WriteLine("Error: Expected value: " + Expected + " Actual value " + Actual);
+                Console.WriteLine($"Error: Expected value: {Expected} Actual value: {Actual}");
             }
         }
     }
