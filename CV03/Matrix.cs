@@ -87,6 +87,11 @@ namespace CV03
 
         public static bool operator ==(Matrix a, Matrix b)
         {
+            if (a._columns != b._columns || a._rows != b._rows)
+            {
+                return false;
+            }
+
             for (int i = 0; i < a._rows; i++)
             {
                 for (int j = 0; j < a._columns; j++)
@@ -103,6 +108,11 @@ namespace CV03
 
         public static bool operator !=(Matrix a, Matrix b)
         {
+            if (a._columns != b._columns || a._rows != b._rows)
+            {
+                return true;
+            }
+
             for (int i = 0; i < a._rows; i++)
             {
                 for (int j = 0; j < a._columns; j++)
