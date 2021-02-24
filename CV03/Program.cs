@@ -49,7 +49,7 @@ namespace CV03
                 //var temp = c.Determinant();
                 Console.WriteLine($"a + c = \n{a + c}");
                 Console.WriteLine($"a - c = \n{a - c}");
-                Console.WriteLine($"a * c = \n{a * b}");
+                Console.WriteLine($"a * b = \n{a * b}");
                 Console.WriteLine($"c == cCopy = {c == cCopy}\n");
                 Console.WriteLine($"c == a = {c == a}\n");
                 Console.WriteLine($"c != cCopy = {c != cCopy}\n");
