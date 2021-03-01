@@ -19,7 +19,7 @@ namespace CV04
             Console.WriteLine($"Nejdelsi slova: {string.Join(", ", stringStatistics.LongestWords())}");
             Console.WriteLine($"Nejkratsi slova: {string.Join(", ", stringStatistics.ShortestWords())}");
             Console.WriteLine($"Najcetnejsi slova: {string.Join(", ", stringStatistics.MostCommonWords())}");
-            Console.WriteLine($"Slove dle abecedy: {string.Join(", ", stringStatistics.SortByAlphabet())}");
+            Console.WriteLine($"Slova dle abecedy: {string.Join(", ", stringStatistics.SortByAlphabet())}");
         }
     }
 }
