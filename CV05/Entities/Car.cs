@@ -11,10 +11,9 @@ namespace CV05.Entities
         public FuelType Fuel { get; set; }
         public CarRadio CarRadio { get; set; }
 
-        public Car(FuelType fuel, int tankSize)
+        public Car(FuelType fuel)
         {
             FuelInTank = 0;
-            TankSize = tankSize;
             Fuel = fuel;
             CarRadio = new CarRadio();
         }

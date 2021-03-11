@@ -23,8 +23,9 @@ namespace CV05.Entities
             }
         }
 
-        public Personal(int peopleMax, int tankSize, FuelType fuelType) : base(fuelType, tankSize)
+        public Personal(int peopleMax, int tankSize, FuelType fuelType) : base(fuelType)
         {
+            TankSize = tankSize;
             PeopleCount = 0;
             PeopleMax = peopleMax;
         }

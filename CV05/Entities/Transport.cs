@@ -23,8 +23,9 @@ namespace CV05.Entities
             }
         }
 
-        public Transport(int storageMax, int tankSize, FuelType fuelType) : base(fuelType, tankSize)
+        public Transport(int storageMax, int tankSize, FuelType fuelType) : base(fuelType)
         {
+            TankSize = tankSize;
             StorageCount = 0;
             StorageMax = storageMax;
         }
