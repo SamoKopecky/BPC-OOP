@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CV05.Entities
 {
-    class Car
+    abstract class Car
     {
         public int TankSize { get; protected set; }
         public int FuelInTank { get; private set; }
@@ -44,7 +44,7 @@ namespace CV05.Entities
             CarRadio.SavePrefix(number, frequency);
         }
 
-        public void SetToRadioPrefix(int number)
+        public void SetToRadioPrefix(int number) 
         {
             CarRadio.SetToPrefix(number);
         }
