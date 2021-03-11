@@ -11,7 +11,7 @@ namespace CV05.Entities
         public FuelType Fuel { get; set; }
         public CarRadio CarRadio { get; set; }
 
-        public Car(FuelType fuel)
+        protected Car(FuelType fuel)
         {
             FuelInTank = 0;
             Fuel = fuel;
