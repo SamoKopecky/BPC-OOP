@@ -9,7 +9,7 @@ namespace CV05.Entities
         public int TankSize { get; protected set; }
         public int FuelInTank { get; private set; }
         public FuelType Fuel { get; set; }
-        public CarRadio CarRadio { get; set; }
+        protected CarRadio CarRadio;
 
         protected Car(FuelType fuel)
         {
@@ -37,6 +37,26 @@ namespace CV05.Entities
             }
 
             FuelInTank += tankAmount;
+        }
+
+        public void SaveRadioPrefix(int number, double frequency)
+        {
+            CarRadio.SavePrefix(number, frequency);
+        }
+
+        public void SetToRadioPrefix(int number)
+        {
+            CarRadio.SetToPrefix(number);
+        }
+
+        public void TurnOnRadio()
+        {
+            CarRadio.IsRadioOn = true;
+        }
+
+        public void TurnOffRadio()
+        {
+            CarRadio.IsRadioOn = false;
         }
     }
 }

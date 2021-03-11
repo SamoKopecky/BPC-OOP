@@ -11,9 +11,9 @@ namespace CV05
             personalCar.TankUp(Car.FuelType.Gasoline, 20);
             personalCar.TankUp(Car.FuelType.Gasoline, 10);
             personalCar.PeopleCount += 4;
-            personalCar.CarRadio.SavePrefix(4, 89.5);
-            personalCar.CarRadio.SetToPrefix(4);
-            personalCar.CarRadio.IsRadioOn = true;
+            personalCar.SaveRadioPrefix(4, 89.5);
+            personalCar.SetToRadioPrefix(4);
+            personalCar.TurnOnRadio();
             Console.WriteLine(personalCar);
             try
             {
@@ -29,9 +29,9 @@ namespace CV05
             var transportCar = new Transport(100, 75, Car.FuelType.Diesel);
             transportCar.TankUp(Car.FuelType.Diesel, 35);
             transportCar.StorageCount += 60;
-            transportCar.CarRadio.SavePrefix(4, 89.5);
-            transportCar.CarRadio.SavePrefix(2, 108.5);
-            transportCar.CarRadio.SetToPrefix(2);
+            transportCar.SaveRadioPrefix(4, 89.5);
+            transportCar.SaveRadioPrefix(2, 108.5);
+            transportCar.SetToRadioPrefix(2);
             Console.WriteLine(transportCar);
 
             try
