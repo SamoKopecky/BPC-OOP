@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using CV06.Entities.Bases;
 
 namespace CV06.Entities
 {

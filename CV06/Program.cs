@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Runtime.InteropServices;
 using CV06.Entities;
+using CV06.Entities.Bases;
 
 namespace CV06
 {
