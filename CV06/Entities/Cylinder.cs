@@ -1,9 +1,9 @@
 ﻿using System;
-using CV06.Entities.Bases;
+using CV06.Entities.Interfaces;
 
 namespace CV06.Entities
 {
-    class Cylinder : Object3DBase
+    class Cylinder : IObject3DBase
     {
         public int Radius { get; set; }
         public int Height { get; set; }
@@ -14,17 +14,17 @@ namespace CV06.Entities
             Height = height;
         }
 
-        public override void Draw()
+        public void Draw()
         {
             Console.WriteLine($"Cylinder (radius = {Radius}; height = {Height})");
         }
 
-        public override double GetSurfaceArea()
+        public double GetSurfaceArea()
         {
             return 2 * Math.PI * Radius * (Radius + Height);
         }
 
-        public override double GetVolume()
+        public double GetVolume()
         {
             return Math.PI * Math.Pow(Radius, 2) * Height;
         }

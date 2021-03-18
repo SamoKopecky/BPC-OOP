@@ -1,9 +1,9 @@
 ﻿using System;
-using CV06.Entities.Bases;
+using CV06.Entities.Interfaces;
 
 namespace CV06.Entities
 {
-    class Sphere : Object3DBase
+    class Sphere : IObject3DBase
     {
         public int Radius { get; set; }
 
@@ -12,17 +12,17 @@ namespace CV06.Entities
             Radius = radius;
         }
 
-        public override void Draw()
+        public void Draw()
         {
             Console.WriteLine($"Sphere (radius = {Radius})");
         }
 
-        public override double GetSurfaceArea()
+        public double GetSurfaceArea()
         {
             return 4 * Math.PI * Math.Pow(Radius, 2);
         }
 
-        public override double GetVolume()
+        public double GetVolume()
         {
             return 4 / 3D * Math.PI * Math.Pow(Radius, 3);
         }

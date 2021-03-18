@@ -1,9 +1,9 @@
 ﻿using System;
-using CV06.Entities.Bases;
+using CV06.Entities.Interfaces;
 
 namespace CV06.Entities
 {
-    class Triangle : Object2DBase
+    class Triangle : IObject2DBase
     {
         public int SideLength { get; set; }
         public int Height { get; set; }
@@ -14,12 +14,12 @@ namespace CV06.Entities
             Height = height;
         }
 
-        public override void Draw()
+        public void Draw()
         {
             Console.WriteLine($"Triangle (side length = {SideLength}; height = {Height})");
         }
 
-        public override double GetArea()
+        public double GetArea()
         {
             return (SideLength * Height) / 2D;
         }

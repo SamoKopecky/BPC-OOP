@@ -1,9 +1,9 @@
 ﻿using System;
-using CV06.Entities.Bases;
+using CV06.Entities.Interfaces;
 
 namespace CV06.Entities
 {
-    class Rectangle : Object2DBase
+    class Rectangle : IObject2DBase
     {
         public int Width { get; set; }
         public int Length { get; set; }
@@ -14,12 +14,12 @@ namespace CV06.Entities
             Length = length;
         }
 
-        public override void Draw()
+        public void Draw()
         {
             Console.WriteLine($"Rectangle (width = {Width}; length = {Length})");
         }
 
-        public override double GetArea()
+        public double GetArea()
         {
             return Width * Length;
         }

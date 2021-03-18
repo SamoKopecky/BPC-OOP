@@ -1,9 +1,9 @@
 ﻿using System;
-using CV06.Entities.Bases;
+using CV06.Entities.Interfaces;
 
 namespace CV06.Entities
 {
-    class SquarePyramid : Object3DBase
+    class SquarePyramid : IObject3DBase
     {
         public int SideLength { get; set; }
         public int Height { get; set; }
@@ -14,12 +14,12 @@ namespace CV06.Entities
             Height = height;
         }
 
-        public override void Draw()
+        public void Draw()
         {
             Console.WriteLine($"Square pyramid (side length = {SideLength}; height = {Height})");
         }
 
-        public override double GetSurfaceArea()
+        public double GetSurfaceArea()
         {
             var cornerHeight = Math.Sqrt(Math.Pow(Math.Sqrt(2) * SideLength / 2, 2) + Math.Pow(Height, 2));
             var sideHeight = Math.Sqrt(Math.Pow(cornerHeight, 2) - Math.Pow(SideLength / 2D, 2));
@@ -27,7 +27,7 @@ namespace CV06.Entities
             return Math.Pow(SideLength, 2) + 4 * sideArea;
         }
 
-        public override double GetVolume()
+        public double GetVolume()
         {
             return 1 / 3D * Math.Pow(SideLength, 2) * Height;
         }

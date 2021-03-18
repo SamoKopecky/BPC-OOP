@@ -1,9 +1,9 @@
 ﻿using System;
-using CV06.Entities.Bases;
+using CV06.Entities.Interfaces;
 
 namespace CV06.Entities
 {
-    class Circle : Object2DBase
+    class Circle : IObject2DBase
     {
         public int Radius { get; set; }
 
@@ -12,12 +12,12 @@ namespace CV06.Entities
             Radius = radius;
         }
 
-        public override void Draw()
+        public void Draw()
         {
             Console.WriteLine($"Circle (radius = {Radius})");
         }
 
-        public override double GetArea()
+        public double GetArea()
         {
             return Math.PI * Math.Pow(Radius, 2);
         }

@@ -1,9 +1,9 @@
 ﻿using System;
-using CV06.Entities.Bases;
+using CV06.Entities.Interfaces;
 
 namespace CV06.Entities
 {
-    class Ellipse : Object2DBase
+    class Ellipse : IObject2DBase
     {
         public int SemiMinorAxis { get; set; }
         public int SemiMajorAxis { get; set; }
@@ -14,12 +14,12 @@ namespace CV06.Entities
             SemiMajorAxis = semiMajorAxis;
         }
 
-        public override void Draw()
+        public void Draw()
         {
             Console.WriteLine($"Ellipse (semi-minor axis = {SemiMinorAxis}; semi-major axis = {SemiMajorAxis})");
         }
 
-        public override double GetArea()
+        public double GetArea()
         {
             return Math.PI * SemiMajorAxis * SemiMinorAxis;
         }
