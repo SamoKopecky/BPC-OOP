@@ -3,7 +3,7 @@ using CV06.Interfaces;
 
 namespace CV06.Entities
 {
-    class Circle : IObject2DBase
+    class Circle : IObject2D
     {
         public int Radius { get; set; }
 

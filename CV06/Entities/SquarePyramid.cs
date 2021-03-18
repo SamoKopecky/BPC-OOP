@@ -3,7 +3,7 @@ using CV06.Interfaces;
 
 namespace CV06.Entities
 {
-    class SquarePyramid : IObject3DBase
+    class SquarePyramid : IObject3D
     {
         public int SideLength { get; set; }
         public int Height { get; set; }

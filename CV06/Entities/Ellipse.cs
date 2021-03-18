@@ -3,7 +3,7 @@ using CV06.Interfaces;
 
 namespace CV06.Entities
 {
-    class Ellipse : IObject2DBase
+    class Ellipse : IObject2D
     {
         public int SemiMinorAxis { get; set; }
         public int SemiMajorAxis { get; set; }

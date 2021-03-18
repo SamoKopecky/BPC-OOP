@@ -3,7 +3,7 @@ using CV06.Interfaces;
 
 namespace CV06.Entities
 {
-    class Sphere : IObject3DBase
+    class Sphere : IObject3D
     {
         public int Radius { get; set; }
 

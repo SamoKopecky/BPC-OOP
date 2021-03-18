@@ -3,7 +3,7 @@ using CV06.Interfaces;
 
 namespace CV06.Entities
 {
-    class Cylinder : IObject3DBase
+    class Cylinder : IObject3D
     {
         public int Radius { get; set; }
         public int Height { get; set; }

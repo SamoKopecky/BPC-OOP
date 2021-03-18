@@ -3,7 +3,7 @@ using CV06.Interfaces;
 
 namespace CV06.Entities
 {
-    class Cuboid : IObject3DBase
+    class Cuboid : IObject3D
     {
         public int Height { get; set; }
         public int Width { get; set; }

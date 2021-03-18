@@ -11,7 +11,7 @@ namespace CV06
             double areaSum = 0;
             double surfaceAreaSum = 0;
             double volumeSum = 0;
-            IGraphicObjectBase[] graphicObjects =
+            IGraphicObject[] graphicObjects =
             {
                 new Circle(5),
                 new Cuboid(5, 6, 7),
@@ -26,14 +26,14 @@ namespace CV06
             {
                 graphicObject.Draw();
 
-                if (graphicObject is IObject2DBase object2D)
+                if (graphicObject is IObject2D object2D)
                 {
                     var area = object2D.GetArea();
                     Console.WriteLine($"\tArea: {area:F2}");
                     areaSum += area;
                 }
 
-                if (graphicObject is IObject3DBase object3D)
+                if (graphicObject is IObject3D object3D)
                 {
                     var surfaceArea = object3D.GetSurfaceArea();
                     var volume = object3D.GetVolume();

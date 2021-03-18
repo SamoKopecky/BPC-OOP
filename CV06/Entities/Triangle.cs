@@ -3,7 +3,7 @@ using CV06.Interfaces;
 
 namespace CV06.Entities
 {
-    class Triangle : IObject2DBase
+    class Triangle : IObject2D
     {
         public int SideLength { get; set; }
         public int Height { get; set; }

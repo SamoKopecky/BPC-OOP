@@ -1,6 +1,6 @@
 ﻿namespace CV06.Interfaces
 {
-    public interface IGraphicObjectBase
+    public interface IGraphicObject
     {
         public void Draw();
     }

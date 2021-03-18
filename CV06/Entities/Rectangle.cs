@@ -3,7 +3,7 @@ using CV06.Interfaces;
 
 namespace CV06.Entities
 {
-    class Rectangle : IObject2DBase
+    class Rectangle : IObject2D
     {
         public int Width { get; set; }
         public int Length { get; set; }
