@@ -1,6 +1,6 @@
 ﻿using System;
 using CV06.Entities;
-using CV06.Entities.Interfaces;
+using CV06.Interfaces;
 
 namespace CV06
 {

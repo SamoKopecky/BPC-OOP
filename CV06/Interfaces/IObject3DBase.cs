@@ -1,4 +1,4 @@
-﻿namespace CV06.Entities.Interfaces
+﻿namespace CV06.Interfaces
 {
     interface IObject3DBase : IGraphicObjectBase
     {
