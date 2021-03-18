@@ -2,6 +2,6 @@
 {
     public interface IGraphicObject
     {
-        public void Draw();
+        void Draw();
     }
 }

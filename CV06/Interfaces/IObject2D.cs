@@ -2,6 +2,6 @@
 {
     interface IObject2D : IGraphicObject
     {
-        public double GetArea();
+        double GetArea();
     }
 }
