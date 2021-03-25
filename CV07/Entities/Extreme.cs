@@ -8,18 +8,12 @@ namespace CV07.Entities
     {
         public static T Maximum<T>(List<T> input) where T : IComparable
         {
-            // To not sort the original collection
-            var tempList = input.ToList();
-            tempList.Sort();
-            return tempList.Last();
+            return input.Max();
         }
 
         public static T Minimum<T>(List<T> input) where T : IComparable
         {
-            // To not sort the original collection
-            var tempList = input.ToList();
-            tempList.Sort();
-            return tempList.First();
+            return input.Min();
         }
     }
 }
