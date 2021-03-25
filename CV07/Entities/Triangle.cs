@@ -1,6 +1,6 @@
 ﻿namespace CV07.Entities
 {
-    class Triangle : Object2DBase
+    public class Triangle : Object2DBase
     {
         public int Height { get; set; }
         public int SideLength { get; set; }

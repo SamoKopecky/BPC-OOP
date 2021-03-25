@@ -7,7 +7,7 @@ namespace CV07
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             var integers = new List<int> {1, 3, 5, 7, 9};
             var strings = new List<string> {"f", "z", "ag", "a", "test"};
@@ -45,7 +45,7 @@ namespace CV07
             };
             var bases = new List<IComparable>();
             bases.AddRange(squares);
-            bases.AddRange(triangles); 
+            bases.AddRange(triangles);
             PrintList(bases);
             PrintList(squares);
             PrintList(triangles);
@@ -53,7 +53,7 @@ namespace CV07
             PrintList(circles);
             PrintList(integers);
             PrintList(strings);
-            Console.Write($"Filtered integers: {string.Join(", " , integers.Where(i => i >= 4 && i <= 8).ToList())}");
+            Console.Write($"Filtered integers: {string.Join(", ", integers.Where(i => i >= 4 && i <= 8).ToList())}");
         }
 
         private static void PrintList<T>(List<T> list) where T : IComparable
