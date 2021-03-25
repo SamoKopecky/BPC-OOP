@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CV07.Entities
+﻿namespace CV07.Entities
 {
     class Triangle : Object2DBase
     {

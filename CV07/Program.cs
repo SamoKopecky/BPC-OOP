@@ -43,7 +43,10 @@ namespace CV07
                 new Square {SideLength = 9},
                 new Square {SideLength = 3}
             };
-
+            var bases = new List<IComparable>();
+            bases.AddRange(squares);
+            bases.AddRange(triangles); 
+            PrintList(bases);
             PrintList(squares);
             PrintList(triangles);
             PrintList(rectangles);
@@ -62,7 +65,7 @@ namespace CV07
                 Console.WriteLine($"\t{item}");
             }
 
-            Console.WriteLine("-------------------------------------------------------");
+            Console.WriteLine("======================================================");
         }
     }
 }

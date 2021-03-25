@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using CV07.Interfaces;
 
 namespace CV07.Entities
@@ -10,11 +8,15 @@ namespace CV07.Entities
         public abstract double Area();
 
 
-        public int CompareTo(Object obj)
+        public int CompareTo(object obj)
         {
-            var otherObject = obj as Object2DBase;
-            if (otherObject == null) return 0;
-            return Area().CompareTo(otherObject.Area());
+            if (obj == null) return 1;
+            if (obj is Object2DBase otherObject)
+            {
+                return Area().CompareTo(otherObject.Area());
+            }
+
+            return 1;
         }
     }
 }
