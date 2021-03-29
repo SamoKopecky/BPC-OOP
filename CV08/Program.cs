@@ -22,8 +22,7 @@ namespace CV08
         {
             var workingDirectory = Environment.CurrentDirectory;
             var projectDirectory = Directory.GetParent(workingDirectory).Parent?.Parent?.FullName;
-            var resourcesDirectory = projectDirectory + @"\Resources";
-            return $@"{resourcesDirectory}\{resourceName}";
+            return $@"{projectDirectory}\Resources\{resourceName}";
         }
     }
 }
