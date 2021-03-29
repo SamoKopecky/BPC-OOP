@@ -19,21 +19,19 @@ namespace CV08.Entities
             {
                 var yearSplit = line.Split(":");
                 var year = Convert.ToInt32(yearSplit[0]);
+                if (_archive.ContainsKey(year))
+                {
+                    Console.WriteLine(
+                        $"Can't add the same year multiple times, skipping year {year} in file {filePath}");
+                    continue;
+                }
+
                 var temps = yearSplit[1]
                     .Split(';')
                     .Select(Convert.ToDouble)
                     .ToList();
                 var yearlyTemp = new YearlyTemp(year, temps);
-
-                try
-                {
-                    _archive.Add(year, yearlyTemp);
-                }
-                catch (ArgumentException)
-                {
-                    Console.WriteLine(
-                        $"Can't add the same year multiple times, skipping year {year} in file {filePath}");
-                }
+                _archive.Add(year, yearlyTemp);
             }
 
             reader.Close();
@@ -53,8 +51,7 @@ namespace CV08.Entities
                 lines.Add(stringBuilder.ToString());
             }
 
-            foreach (var line in lines) writer.WriteLine(line);
-
+            lines.ForEach(line => writer.WriteLine(line));
             writer.Close();
         }
 
@@ -114,8 +111,10 @@ namespace CV08.Entities
             var avgTemps = new double[12];
             var years = _archive.Values.Count;
             foreach (var yearlyTemp in _archive.Values)
+            {
                 for (var i = 0; i < 12; i++)
                     avgTemps[i] += yearlyTemp.MonthlyTemps[i];
+            }
 
             avgTemps = avgTemps.Select(t => t / years).ToArray();
             var stringBuilder = new StringBuilder();
