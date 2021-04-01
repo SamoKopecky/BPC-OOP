@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace CV08.Entities
 {
     public class TempArchive
     {
-        public Func<double, string> Converter { get; set; } = d => d.ToString();
+        public Func<double, string> Converter { get; set; } = d => d.ToString(CultureInfo.CurrentCulture);
         private SortedDictionary<int, YearlyTemp> _archive = new SortedDictionary<int, YearlyTemp>();
 
         public void Load(string filePath)
@@ -48,10 +49,9 @@ namespace CV08.Entities
                 var strings = value.MonthlyTemps.Select(t => $"{t:F1}").ToList();
                 stringBuilder.Append(key + ":");
                 stringBuilder.Append(string.Join(";", strings));
-                lines.Add(stringBuilder.ToString());
+                writer.WriteLine(stringBuilder.ToString());
             }
 
-            lines.ForEach(line => writer.WriteLine(line));
             writer.Close();
         }
 
@@ -69,7 +69,12 @@ namespace CV08.Entities
 
         public YearlyTemp Find(int year)
         {
-            return _archive[year];
+            if (_archive.ContainsKey(year))
+            {
+                return _archive[year];
+            }
+
+            throw new Exception("Can't find year");
         }
 
         public void PrintTemps()
