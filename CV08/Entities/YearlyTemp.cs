@@ -10,15 +10,13 @@ namespace CV08.Entities
         public int Year { get; set; }
         public List<double> MonthlyTemps { get; set; }
         public double MaxTemp => MonthlyTemps.Max();
-        public double MinTemp { get; }
-        public double AvgYearlyTemp { get; }
+        public double MinTemp => MonthlyTemps.Min();
+        public double AvgYearlyTemp => MonthlyTemps.Average();
 
         public YearlyTemp(int year, List<double> monthlyTemps)
         {
             Year = year;
             MonthlyTemps = monthlyTemps;
-            MinTemp = MonthlyTemps.Min();
-            AvgYearlyTemp = MonthlyTemps.Average();
         }
     }
 }
