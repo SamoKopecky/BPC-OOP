@@ -1,5 +1,7 @@
-﻿using System.Data;
+﻿using System.ComponentModel;
+using System.Data;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
 namespace CV09.Entities
 {
