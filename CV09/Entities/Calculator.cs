@@ -1,7 +1,5 @@
-﻿using System.ComponentModel;
-using System.Data;
+﻿using System.Data;
 using System.Linq;
-using System.Runtime.CompilerServices;
 
 namespace CV09.Entities
 {
@@ -54,7 +52,7 @@ namespace CV09.Entities
                 var resultNum = double.Parse(result);
                 if (resultNum % (int) resultNum != 0)
                 {
-                    result = $"{resultNum:F2}";
+                    result = $"{resultNum:F4}";
                 }
                 else
                 {
