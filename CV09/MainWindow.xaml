@@ -57,12 +57,15 @@
                  Margin="1"
                  IsReadOnly="True"
                  TextAlignment="Right"
-                 FontSize="20" />
+                 FontSize="20"
+                 Text="{Binding Path=Display}" />
         <TextBox Name="Memory"
                  Grid.Row="0"
                  Grid.ColumnSpan="5"
                  Grid.Column="0"
                  Margin="1"
-                 IsReadOnly="True" />
+                 IsReadOnly="True"
+                 Text="{Binding Path=Memory}" />
+
     </Grid>
 </Window>

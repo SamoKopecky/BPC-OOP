@@ -14,21 +14,24 @@ namespace CV09
 {
     public partial class MainWindow : Window
     {
-        private readonly Calculator _calculator = new Calculator();
+        public Calculator Calculator = new Calculator();
+
 
         public MainWindow()
         {
             InitializeComponent();
-            Display.Text = _calculator.Display;
-            Memory.Text = _calculator.Memory;
+            //Display.Text = Calculator.Display;
+            //Memory.Text = Calculator.Memory;
+            Memory.DataContext = Calculator;
+            Display.DataContext = Calculator;
             ExtraCode();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            _calculator.Button((sender as Button)?.Content.ToString());
-            Display.Text = _calculator.Display;
-            Memory.Text = _calculator.Memory;
+            Calculator.Button((sender as Button)?.Content.ToString());
+            //Display.Text = Calculator.Display;
+            //Memory.Text = Calculator.Memory;
         }
 
 

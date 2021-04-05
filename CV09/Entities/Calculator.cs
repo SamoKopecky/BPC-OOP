@@ -5,11 +5,31 @@ using System.Runtime.CompilerServices;
 
 namespace CV09.Entities
 {
-    public class Calculator
+    public class Calculator : INotifyPropertyChanged
     {
         private State _state;
-        public string Display { get; set; }
-        public string Memory { get; set; }
+        private string _display;
+        private string _memory;
+
+        public string Display
+        {
+            get => _display;
+            set
+            {
+                _display = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string Memory
+        {
+            get => _memory;
+            set
+            {
+                _memory = value;
+                OnPropertyChanged();
+            }
+        }
 
         public Calculator()
         {
@@ -106,6 +126,13 @@ namespace CV09.Entities
 
             Display = "";
             _state = State.Operation;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
