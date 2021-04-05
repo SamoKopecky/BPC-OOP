@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:CV09"
         xmlns:c="clr-namespace:CV09.Entities"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="300">
+        Title="Calculator" Height="400" Width="300">
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Margin" Value="1" />
