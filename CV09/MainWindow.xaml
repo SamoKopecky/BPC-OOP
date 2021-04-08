@@ -31,25 +31,31 @@
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
+            <RowDefinition />
         </Grid.RowDefinitions>
-        <Button Name="NumZero" Content="0" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" />
-        <Button Name="NumOne" Content="1" Grid.Row="4" Grid.Column="0" />
-        <Button Name="NumTwo" Content="2" Grid.Row="4" Grid.Column="1" />
-        <Button Name="NumThree" Content="3" Grid.Row="4" Grid.Column="2" />
-        <Button Name="NumFour" Content="4" Grid.Row="3" Grid.Column="0" />
-        <Button Name="NumFive" Content="5" Grid.Row="3" Grid.Column="1" />
-        <Button Name="NumSix" Content="6" Grid.Row="3" Grid.Column="2" />
-        <Button Name="NumSeven" Content="7" Grid.Row="2" Grid.Column="0" />
-        <Button Name="NumEight" Content="8" Grid.Row="2" Grid.Column="1" />
-        <Button Name="NumNine" Content="9" Grid.Row="2" Grid.Column="2" />
-        <Button Name="Equals" Content="=" Grid.Row="4" Grid.Column="4" Grid.RowSpan="2" />
-        <Button Name="Addition" Content="+" Grid.Row="5" Grid.Column="3" />
-        <Button Name="Subtraction" Content="-" Grid.Row="4" Grid.Column="3" />
-        <Button Name="Multiplication" Content="*" Grid.Row="3" Grid.Column="3" />
-        <Button Name="Division" Content="/" Grid.Row="2" Grid.Column="3" />
-        <Button Name="Decimal" Content="." Grid.Row="5" Grid.Column="2" />
-        <Button Name="Clear" Content="C" Grid.Row="2" Grid.Column="4" />
-        <Button Name="ClearDisplay" Content="CE" Grid.Row="3" Grid.Column="4" />
+        <Button Name="NumZero" Content="0" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" />
+        <Button Name="NumOne" Content="1" Grid.Row="5" Grid.Column="0" />
+        <Button Name="NumTwo" Content="2" Grid.Row="5" Grid.Column="1" />
+        <Button Name="NumThree" Content="3" Grid.Row="5" Grid.Column="2" />
+        <Button Name="NumFour" Content="4" Grid.Row="4" Grid.Column="0" />
+        <Button Name="NumFive" Content="5" Grid.Row="4" Grid.Column="1" />
+        <Button Name="NumSix" Content="6" Grid.Row="4" Grid.Column="2" />
+        <Button Name="NumSeven" Content="7" Grid.Row="3" Grid.Column="0" />
+        <Button Name="NumEight" Content="8" Grid.Row="3" Grid.Column="1" />
+        <Button Name="NumNine" Content="9" Grid.Row="3" Grid.Column="2" />
+        <Button Name="Equals" Content="=" Grid.Row="5" Grid.Column="4" Grid.RowSpan="2" />
+        <Button Name="Addition" Content="+" Grid.Row="6" Grid.Column="3" />
+        <Button Name="Subtraction" Content="-" Grid.Row="5" Grid.Column="3" />
+        <Button Name="Multiplication" Content="*" Grid.Row="4" Grid.Column="3" />
+        <Button Name="Division" Content="/" Grid.Row="3" Grid.Column="3" />
+        <Button Name="Decimal" Content="." Grid.Row="6" Grid.Column="2" />
+        <Button Name="Clear" Content="C" Grid.Row="3" Grid.Column="4" />
+        <Button Name="ClearDisplay" Content="CE" Grid.Row="4" Grid.Column="4" />
+        <Button Name="ClearMemory" Content="MC" Grid.Row="2" Grid.Column="0" />
+        <Button Name="MemoryRecall" Content="MR" Grid.Row="2" Grid.Column="1" />
+        <Button Name="MemoryAdd" Content="M+" Grid.Row="2" Grid.Column="2" />
+        <Button Name="MemorySubtract" Content="M-" Grid.Row="2" Grid.Column="3" />
+        <Button Name="MemoryStore" Content="MS" Grid.Row="2" Grid.Column="4" />
         <TextBox Name="Display"
                  Grid.Row="1"
                  Grid.ColumnSpan="5"
@@ -65,7 +71,7 @@
                  Grid.Column="0"
                  Margin="1"
                  IsReadOnly="True"
-                 Text="{Binding Path=DisplayMemory}" />
-
+                 Text="{Binding Path=DisplayMemory}"
+                 FontSize="12" />
     </Grid>
 </Window>

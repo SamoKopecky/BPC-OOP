@@ -20,18 +20,12 @@ namespace CV09
         public MainWindow()
         {
             InitializeComponent();
-            //Display.Text = Calculator.Display;
-            //DisplayMemory.Text = Calculator.DisplayMemory;
-            Memory.DataContext = Calculator;
-            Display.DataContext = Calculator;
             ExtraCode();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Calculator.Button((sender as Button)?.Content.ToString());
-            //Display.Text = Calculator.Display;
-            //DisplayMemory.Text = Calculator.DisplayMemory;
         }
 
 
