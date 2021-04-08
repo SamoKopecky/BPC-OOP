@@ -20,6 +20,8 @@ namespace CV09
         public MainWindow()
         {
             InitializeComponent();
+            Memory.DataContext = Calculator;
+            Display.DataContext = Calculator;
             ExtraCode();
         }
 
