@@ -9,7 +9,7 @@ namespace CV09.Entities
     {
         private State _state;
         private string _display;
-        private string _memory;
+        private string _displayMemory;
 
         public string Display
         {
@@ -21,12 +21,12 @@ namespace CV09.Entities
             }
         }
 
-        public string Memory
+        public string DisplayMemory
         {
-            get => _memory;
+            get => _displayMemory;
             set
             {
-                _memory = value;
+                _displayMemory = value;
                 OnPropertyChanged();
             }
         }
@@ -35,7 +35,7 @@ namespace CV09.Entities
         {
             _state = State.Operation;
             Display = "";
-            Memory = "";
+            DisplayMemory = "";
         }
 
         public void Button(string text)
@@ -65,7 +65,7 @@ namespace CV09.Entities
         {
             if (_state != State.Operation)
             {
-                var result = new DataTable().Compute(Memory, null).ToString();
+                var result = new DataTable().Compute(DisplayMemory, null).ToString();
                 if (result == "")
                 {
                     result = Display;
@@ -91,10 +91,10 @@ namespace CV09.Entities
             if (_state == State.Result)
             {
                 Display = "";
-                Memory = "";
+                DisplayMemory = "";
             }
 
-            Memory += text;
+            DisplayMemory += text;
             Display += text;
             _state = State.Number;
         }
@@ -103,23 +103,23 @@ namespace CV09.Entities
         {
             if (text == "CE")
             {
-                var operation = Memory.LastOrDefault(operations.Contains).ToString()[0];
-                var lastNumber = Memory.Split(operation).Last();
-                Memory = Memory.Remove(Memory.LastIndexOf(lastNumber), lastNumber.Length);
+                var operation = DisplayMemory.LastOrDefault(operations.Contains).ToString()[0];
+                var lastNumber = DisplayMemory.Split(operation).Last();
+                DisplayMemory = DisplayMemory.Remove(DisplayMemory.LastIndexOf(lastNumber), lastNumber.Length);
             }
             else if (input == 'C')
             {
-                Memory = "";
+                DisplayMemory = "";
             }
             else
             {
                 switch (_state)
                 {
                     case State.Number:
-                        Memory += text;
+                        DisplayMemory += text;
                         break;
                     case State.Result:
-                        Memory = $"{Display}{text}";
+                        DisplayMemory = $"{Display}{text}";
                         break;
                 }
             }

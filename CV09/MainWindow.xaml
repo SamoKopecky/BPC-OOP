@@ -65,7 +65,7 @@
                  Grid.Column="0"
                  Margin="1"
                  IsReadOnly="True"
-                 Text="{Binding Path=Memory}" />
+                 Text="{Binding Path=DisplayMemory}" />
 
     </Grid>
 </Window>
