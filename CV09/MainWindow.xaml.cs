@@ -20,7 +20,7 @@ namespace CV09
         {
             InitializeComponent();
             Display.Text = _calculator.Display;
-            Memory.Text = _calculator.Memory;
+            Memory.Text = _calculator.DisplayMemory;
             ExtraCode();
         }
 
@@ -28,7 +28,7 @@ namespace CV09
         {
             _calculator.Button((sender as Button)?.Content.ToString());
             Display.Text = _calculator.Display;
-            Memory.Text = _calculator.Memory;
+            Memory.Text = _calculator.DisplayMemory;
         }
 
 
