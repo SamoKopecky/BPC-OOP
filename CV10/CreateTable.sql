@@ -22,6 +22,6 @@ CREATE TABLE Evaluations(
 	EvaluationDate DATE,
 	EvaluationNumber FLOAT
 	PRIMARY KEY (StudentId, ShortName),
-	foreign KEY (StudentId) REFERENCES Students(Id),
-	foreign KEY (ShortName) REFERENCES Subjects(ShortName)
+	FOREIGN KEY (StudentId) REFERENCES Students(Id),
+	FOREIGN KEY (ShortName) REFERENCES Subjects(ShortName)
 )
