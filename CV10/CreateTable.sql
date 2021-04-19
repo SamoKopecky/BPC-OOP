@@ -9,7 +9,7 @@ CREATE TABLE Subjects(
 )
 
 CREATE TABLE Students(
-	Id INT IDENTITY(1,1) NOT NULL,
+	Id uniqueidentifier NOT NULL,
 	FirstName VARCHAR(50),
 	SecondName VARCHAR(50),
 	DateOfBirth DATE
@@ -17,7 +17,7 @@ CREATE TABLE Students(
 )
 
 CREATE TABLE Evaluations(
-	StudentId INT,
+	StudentId uniqueidentifier,
 	ShortName VARCHAR(50),
 	EvaluationDate DATE,
 	EvaluationNumber FLOAT

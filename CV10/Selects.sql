@@ -1,5 +1,5 @@
-﻿SELECT s.*, e.ShortName, su.SubjectName 
-FROM Students AS s 
+﻿SELECT s.*, e.ShortName, su.SubjectName
+FROM Students AS s
 	LEFT OUTER JOIN 
 	Evaluations AS e
 	ON s.Id = e.StudentId 
@@ -13,7 +13,7 @@ FROM Students AS s
 	GROUP BY s.SecondName 
 	order by 'Last name counter' desc
 
-SELECT e.ShortName, COUNT(e.ShortName) as 'Students count'
+SELECT e.ShortName, COUNT(e.ShortName) AS 'Students count'
 FROM Evaluations AS e
 	GROUP BY e.ShortName
 	HAVING COUNT(e.ShortName) < 3
