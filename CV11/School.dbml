@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CV10" Class="SchoolDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\CV10.mdf;Integrated Security=True;Connect Timeout=30" SettingsObjectName="CV11.Properties.Settings" SettingsPropertyName="CV10ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Evaluations" Member="Evaluations">
+    <Type Name="Evaluation">
+      <Column Name="StudentId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ShortName" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="EvaluationDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EvaluationNumber" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="Student_Evaluation" Member="Student" ThisKey="StudentId" OtherKey="Id" Type="Student" IsForeignKey="true" />
+      <Association Name="Subject_Evaluation" Member="Subject" ThisKey="ShortName" OtherKey="ShortName" Type="Subject" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Students" Member="Students">
+    <Type Name="Student">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SecondName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DateOfBirth" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="Student_Evaluation" Member="Evaluations" ThisKey="Id" OtherKey="StudentId" Type="Evaluation" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Subjects" Member="Subjects">
+    <Type Name="Subject">
+      <Column Name="SubjectName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ShortName" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Subject_Evaluation" Member="Evaluations" ThisKey="ShortName" OtherKey="ShortName" Type="Evaluation" />
+    </Type>
+  </Table>
+</Database>
