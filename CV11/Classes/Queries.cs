@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CV11.Classes
 {
@@ -16,19 +13,13 @@ namespace CV11.Classes
             _dbContext = dbContext;
         }
 
-        public void PrintSubjectCounts()
+        public void PrintSubjectCounts(IQueryable<IGrouping<string, Evaluation>> query)
         {
-            var query = _dbContext.Evaluations
-                .GroupBy(e => e.ShortName)
-                .Select(g => new
-                {
-                    Name = g.Key,
-                    Count = g.Count()
-                });
-
-            foreach (var g in query.OrderByDescending(arg => arg.Count))
+            var list = query
+                .OrderByDescending(g => g.Count());
+            foreach (var g in list)
             {
-                Console.WriteLine($"{g.Name}: {g.Count}");
+                Console.WriteLine($"{g.Key}: {g.Count()}");
             }
         }
 
@@ -54,7 +45,7 @@ namespace CV11.Classes
                 .Select(e => e.Subject);
         }
 
-        public void PrintAverage()
+        public void PrintAverageSubjectEvaluation()
         {
             var query1 = _dbContext.Evaluations.GroupBy(
                 e => e.ShortName,

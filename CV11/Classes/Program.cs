@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Dynamic;
 using System.Linq;
-using System.Net.Sockets;
 
 namespace CV11.Classes
 {
@@ -14,7 +10,16 @@ namespace CV11.Classes
             var context = new SchoolDataContext();
             SeedDb(context);
             var queries = new Queries(context);
-            queries.PrintSubjectCounts();
+
+            var query = context.Evaluations
+                .GroupBy(e => e.ShortName)
+                .Select(g => g);
+            var queryOld = from e in context.Evaluations
+                group e by e.ShortName;
+
+            queries.PrintSubjectCounts(query);
+            PrintSeparator();
+            queries.PrintSubjectCounts(queryOld);
             PrintSeparator();
             foreach (var student in queries.SubjectsStudents("BPC-OOP"))
             {
@@ -22,13 +27,13 @@ namespace CV11.Classes
             }
 
             PrintSeparator();
-            foreach (var subject in queries.StudentsSubjects(Guid.Parse("a427884f-1985-4028-baa3-51d14ce49c56")))
+            foreach (var subject in queries.StudentsSubjects(Seeds.Students[0].Id))
             {
                 Console.WriteLine($"{subject.SubjectName} ({subject.ShortName})");
             }
 
             PrintSeparator();
-            queries.PrintAverage();
+            queries.PrintAverageSubjectEvaluation();
 
             Console.ReadKey();
         }
