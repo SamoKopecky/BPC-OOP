@@ -94,6 +94,14 @@ namespace CV11
 				return this.GetTable<Subject>();
 			}
 		}
+		
+		public System.Data.Linq.Table<StudentsCount> StudentsCounts
+		{
+			get
+			{
+				return this.GetTable<StudentsCount>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Evaluations")]
@@ -585,6 +593,51 @@ namespace CV11
 		{
 			this.SendPropertyChanging();
 			entity.Subject = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.StudentsCount")]
+	public partial class StudentsCount
+	{
+		
+		private string _ShortName;
+		
+		private System.Nullable<int> _Count;
+		
+		public StudentsCount()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShortName", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string ShortName
+		{
+			get
+			{
+				return this._ShortName;
+			}
+			set
+			{
+				if ((this._ShortName != value))
+				{
+					this._ShortName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Count", DbType="Int")]
+		public System.Nullable<int> Count
+		{
+			get
+			{
+				return this._Count;
+			}
+			set
+			{
+				if ((this._Count != value))
+				{
+					this._Count = value;
+				}
+			}
 		}
 	}
 }

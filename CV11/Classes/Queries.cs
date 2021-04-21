@@ -13,13 +13,12 @@ namespace CV11.Classes
             _dbContext = dbContext;
         }
 
-        public void PrintSubjectCounts(IQueryable<IGrouping<string, Evaluation>> query)
+        public void PrintSubjectCounts()
         {
-            var list = query
-                .OrderByDescending(g => g.Count());
-            foreach (var g in list)
+            var list = _dbContext.StudentsCounts.OrderByDescending(c => c.Count);
+            foreach (var sc in list)
             {
-                Console.WriteLine($"{g.Key}: {g.Count()}");
+                Console.WriteLine($"{sc.ShortName}: {sc.Count}");
             }
         }
 

@@ -11,15 +11,7 @@ namespace CV11.Classes
             SeedDb(context);
             var queries = new Queries(context);
 
-            var query = context.Evaluations
-                .GroupBy(e => e.ShortName)
-                .Select(g => g);
-            var queryOld = from e in context.Evaluations
-                group e by e.ShortName;
-
-            queries.PrintSubjectCounts(query);
-            PrintSeparator();
-            queries.PrintSubjectCounts(queryOld);
+            queries.PrintSubjectCounts();
             PrintSeparator();
             foreach (var student in queries.SubjectsStudents("BPC-OOP"))
             {

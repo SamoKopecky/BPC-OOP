@@ -26,4 +26,10 @@
       <Association Name="Subject_Evaluation" Member="Evaluations" ThisKey="ShortName" OtherKey="ShortName" Type="Evaluation" />
     </Type>
   </Table>
+  <Table Name="dbo.StudentsCount" Member="StudentsCounts">
+    <Type Name="StudentsCount">
+      <Column Name="ShortName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Count" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>
