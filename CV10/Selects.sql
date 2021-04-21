@@ -24,3 +24,6 @@ MAX(e.EvaluationNumber) AS 'Worst evaluation',
 MIN(e.EvaluationNumber) AS 'Best evaluation'
 FROM Evaluations AS e
 	GROUP BY e.ShortName
+
+
+SELECT * FROM StudentsCount

@@ -2,10 +2,10 @@
 DELETE FROM Students
 DELETE FROM Subjects
 
-INSERT INTO Students(FirstName, SecondName, DateOfBirth) VALUES ('Samuel', 'Kopecký', '05/31/16')
-INSERT INTO Students(FirstName, SecondName, DateOfBirth) VALUES ('Adam', 'Kopecký', '05/31/16')
-INSERT INTO Students(FirstName, SecondName, DateOfBirth) VALUES ('Jozef', 'Mrkva', '04/29/15')
-INSERT INTO Students(FirstName, SecondName, DateOfBirth) VALUES ('Pavol', 'Ostrý', '09/05/18')
+INSERT INTO Students(Id, FirstName, SecondName, DateOfBirth) VALUES ('3dd17784-48a5-4ec4-ae59-f94f4459de72', 'Samuel', 'Kopecký', '05/31/16')
+INSERT INTO Students(Id, FirstName, SecondName, DateOfBirth) VALUES ('cc0c000b-4d61-4735-9e57-8eb6387516ae', 'Adam', 'Kopecký', '05/31/16')
+INSERT INTO Students(Id, FirstName, SecondName, DateOfBirth) VALUES ('d384b638-7891-4e72-ab62-5de81c3e3385', 'Jozef', 'Mrkva', '04/29/15')
+INSERT INTO Students(Id, FirstName, SecondName, DateOfBirth) VALUES ('8df5c686-560d-4584-a530-f441099a5b19', 'Pavol', 'Ostrý', '09/05/18')
 
 INSERT INTO Subjects(SubjectName, ShortName) VALUES ('Bezpečnost ICT 2', 'BPC-IC2')
 INSERT INTO Subjects(SubjectName, ShortName) VALUES ('Objektově orientované programování', 'BPC-OOP')
