@@ -4,11 +4,11 @@ using System.Windows;
 namespace Calculator.WPFApp
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for CalculatorWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class CalculatorWindow : Window
     {
-        public MainWindow()
+        public CalculatorWindow()
         {
             InitializeComponent();
         }

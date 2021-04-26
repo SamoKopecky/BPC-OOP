@@ -23,12 +23,12 @@ namespace Calculator.WPFApp.CalcServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ICalcServiceChannel : Calculator.WPFApp.CalcServiceReference.ICalcService, System.ServiceModel.IClientChannel {
+    public interface ICalcServiceChannel : global::Calculator.WPFApp.CalcServiceReference.ICalcService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class CalcServiceClient : System.ServiceModel.ClientBase<Calculator.WPFApp.CalcServiceReference.ICalcService>, Calculator.WPFApp.CalcServiceReference.ICalcService {
+    public partial class CalcServiceClient : System.ServiceModel.ClientBase<global::Calculator.WPFApp.CalcServiceReference.ICalcService>, global::Calculator.WPFApp.CalcServiceReference.ICalcService {
         
         public CalcServiceClient() {
         }
