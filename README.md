@@ -1,1 +1,2 @@
-## Cvičenia z BPC-OOP
+# About
+- exercises for school subject
